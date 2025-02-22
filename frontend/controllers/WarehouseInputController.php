@@ -36,9 +36,12 @@ class WarehouseInputController extends Controller
         $searchModel = new WarehouseInputSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        $materials = ArrayHelper::map(Materials::find()->all(), 'id', 'name');
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'materials' => $materials,
         ]);
     }
 

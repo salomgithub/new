@@ -35,8 +35,8 @@ class WarehouseInput extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['material_id', 'quantity', 'date_received'], 'required'],
-            [['material_id', 'status'], 'integer'],
+            [['material_id', 'quantity', 'date_received', 'price', 'summa' , 'from_name'], 'required'],
+            [['material_id', 'status', 'price', 'summa'], 'integer'],
             [['quantity'], 'number'],
             [['date_received', 'created_at', 'updated_at'], 'safe'],
             [['comments'], 'string'],

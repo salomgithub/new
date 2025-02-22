@@ -63,7 +63,8 @@ class WarehouseController extends Controller
         $materialsItems = (new \yii\db\Query())
             ->select([
                 'w.material_id AS id',
-                'rm.name AS name',
+                // 'rm.name AS name',
+                'MAX(rm.name) AS name',
             ])
             ->from('materials rm')
             ->where(['>', 'w.total_stock', 0])

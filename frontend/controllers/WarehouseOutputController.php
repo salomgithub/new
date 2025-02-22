@@ -35,10 +35,13 @@ class WarehouseOutputController extends Controller
     {
         $searchModel = new WarehouseOutputSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        
+        $materials = ArrayHelper::map(Materials::find()->all(), 'id', 'name');
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'materials' => $materials,
         ]);
     }
 

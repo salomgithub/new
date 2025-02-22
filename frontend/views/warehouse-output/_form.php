@@ -18,7 +18,7 @@ use yii\bootstrap\Modal;
 
 <div class="container mt-4 warehouse-output-form">
 
-    <h3 class="text-center mb-4">Warehouse Input Form</h3>
+    <h3 class="text-center mb-4">Chiqim</h3>
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -58,61 +58,6 @@ use yii\bootstrap\Modal;
 </div>
 
 
-<!-- Modalni ochish tugmasi -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Add Warehouse Input
-</button>
 
-<!-- Modal oynasi -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="myModalLabel">Warehouse Input Form</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Formani shu yerga joylashtiring -->
-                <?php $form = ActiveForm::begin(); ?>
-
-                <div class="form-group">
-                    <?= $form->field($model, 'material_id')->dropDownList($materialsList, [
-                        'prompt' => 'Укажите Tovar',
-                    ])->label('Tovar') ?>
-                </div>
-
-                <div class="form-group">
-                    <?= $form->field($model, 'quantity')->textInput([
-                        'maxlength' => true,
-                        'type' => 'number',
-                        'class' => 'form-control'
-                    ]) ?>
-                </div>
-
-                <div class="form-group">
-                    <?= $form->field($model, 'date_of_exit')->textInput([
-                        'type' => 'date',
-                        'value' => !empty($model->date_received) ? date('Y.m.d', strtotime($model->date_received)) : ''
-                    ]) ?>
-                </div>
-
-                <div class="form-group">
-                    <?= $form->field($model, 'destination')->dropDownList(['1' => 'Bichish', '2' => 'Tikish', '3' => 'Taqsimot']) ?>
-                </div>
-
-                <div class="form-group">
-                    <?= $form->field($model, 'comments')->textarea(['rows' => 6]) ?>
-                </div>
-
-                <div class="form-group text-center">
-                    <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-                </div>
-
-                <?php ActiveForm::end(); ?>
-            </div>
-        </div>
-    </div>
 </div>
 

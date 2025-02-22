@@ -7,11 +7,11 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
+use frontend\assets\OylikAsset;
 use common\widgets\Alert;
 use mdm\admin\components\Helper;
 
-AppAsset::register($this);
+OylikAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -30,30 +30,29 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'M A V R I D ',
+        'brandLabel' => 'OMBORXONA ',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Hodimlar', 'url' => ['/employees/index']],
-        ['label' => 'User', 'url' => ['/admin/user/signup']],
-        ['label' => 'Tovar', 'url' => ['/tovar/index']],
+//        ['label' => 'Hodimlar', 'url' => ['/employees/index']],
+//        ['label' => 'User', 'url' => ['/admin/user/signup']],
+//        ['label' => 'Tovar', 'url' => ['/tovar/index']],
 //        ['label' => 'Ranglar', 'url' => ['/color/index']],
 //        ['label' => 'O`lchamlar', 'url' => ['/size/index']],
-        ['label' => 'Operatsiyalar', 'url' => ['/code/index']],
-        ['label' => 'Buyurtmalar', 'url' => ['/orders/index']],
-        ['label' => 'Jarayonlar', 'url' => ['/worker/index']],
-        ['label' => 'Buxgalteriya ', 'url' => ['/date/index']],
-        ['label' => 'Omborxona ', 'url' => ['/warehouse/index']],
-        ['label' => 'Hisobotlar ', 'url' => ['/report/index']],
+//        ['label' => 'Operatsiyalar', 'url' => ['/code/index']],
+//        ['label' => 'Buyurtmalar', 'url' => ['/orders/index']],
+//        ['label' => 'Jarayonlar', 'url' => ['/worker/index']],
+//        ['label' => 'Buxgalteriya ', 'url' => ['/date/index']],
+        ['label' => 'Omborxona', 'url' => ['/qoldiq/index']],
 //        ['label' => 'Omborxona', 'url' => ['/warehouse/index']],
 //        ['label' => 'Statistika', 'url' => ['/oylik/index']],
     ];
     if (Yii::$app->user->isGuest) {
         // $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
@@ -93,3 +92,4 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+a
